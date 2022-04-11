@@ -1,25 +1,12 @@
 <template>
     <div class="container">
-        <Product :image="require('@/assets/test.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test2.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test4.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test5.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test2.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test4.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test5.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test2.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test4.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test5.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test2.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test4.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test5.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test2.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test4.png')" title="Test" description="Teste..." />
-        <Product :image="require('@/assets/test5.png')" title="Test" description="Teste..." />
+        <Product 
+            v-for="image in images" 
+            :key="image" 
+            :image="image.source" 
+            :title="image.title" 
+            description="Teste..." 
+        />
         <Smooth />
     </div>
 </template>
@@ -28,6 +15,12 @@
     import { Component, Vue } from "vue-property-decorator";
     import Smooth from "@/components/home/smooth.component.vue";
     import Product from "@/components/home/product.component.vue";
+
+    interface IImages {
+        title: string;
+        source: string;
+        description: string;
+    }
     
     @Component({
         components: {
@@ -36,12 +29,39 @@
         }
     })
 
-    export default class HomeView extends Vue {}
+    export default class HomeView extends Vue {
+        private readonly images: IImages[] = [
+            { title: "Macaco", source: require('@/assets/test.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test2.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test4.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test5.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test2.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test4.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test5.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test2.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test4.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test5.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test2.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test4.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test5.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test2.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test4.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test5.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test2.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test4.png'), description: "Teste..." },
+            { title: "Macaco", source: require('@/assets/test5.png'), description: "Teste..." },
+        ]
+    }
 </script>
 
 <style scoped>
 .container {
-    padding: 30px;
+    padding: 10px;
     display: block;
     justify-content: center;
     column-count: 4;

@@ -21,4 +21,10 @@
     cursor: pointer;
     font-family: 'Amaranth', sans-serif;
 }
+
+@media screen and (max-width: 750px){
+    .title {
+        font-size: 1.3rem;
+    }
+}
 </style>

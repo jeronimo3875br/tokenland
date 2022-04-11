@@ -1,7 +1,7 @@
 <template>
     <header>
         <Title title="Tokenland" />
-        <Profile username="Gabriel Jeronimo"  />
+        <!-- <Profile username="Gabriel Jeronimo"  /> -->
     </header> 
 </template>
 

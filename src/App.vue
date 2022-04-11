@@ -25,4 +25,10 @@
   grid-template-columns: 1fr;
   grid-template-rows: 10% 90%;
 }
+
+@media screen and (max-width: 750px){
+  #app {
+    grid-template-rows: 7% 93%;
+  }
+}
 </style>
