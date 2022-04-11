@@ -1,7 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
     border: none;
     outline: none;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --primary: #ffffff;
+    --secondary: #fe8c00;
+    --tertiary: #fafafa;
+}
+
+body {
+    background-color: var(--tertiary);
+}
+::-webkit-scrollbar {
+    width: 0;
 }
