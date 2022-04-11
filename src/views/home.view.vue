@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        {{ pushImages() }}
         <Product 
             v-for="image in images" 
             :key="image" 
@@ -21,7 +22,7 @@
         source: string;
         description: string;
     }
-    
+
     @Component({
         components: {
             Product,
@@ -30,32 +31,33 @@
     })
 
     export default class HomeView extends Vue {
-        private readonly images: IImages[] = [
-            { title: "Macaco", source: require('@/assets/test.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test2.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test4.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test5.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test2.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test4.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test5.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test2.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test4.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test5.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test2.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test4.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test5.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test2.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test4.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test5.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test2.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test4.png'), description: "Teste..." },
-            { title: "Macaco", source: require('@/assets/test5.png'), description: "Teste..." },
+        private readonly sources: string[] = [
+            require('@/assets/test.png'),
+            require('@/assets/test2.png'),
+            require('@/assets/test4.png'),
+            require('@/assets/test5.png')
         ]
+
+        private titles: string[] = [
+            "Pedro",
+            "Bruno",
+            "Marcos",
+            "Armando",
+            "Paulo",
+            "Jeronimo"
+        ]
+
+        private readonly images: IImages[] = []
+
+        private pushImages(): void {
+            for (let i = 0; i < 10; i++){
+                this.images.push({
+                    title: this.titles[Math.floor(Math.random() * this.titles.length)],
+                    source: this.sources[Math.floor(Math.random() * this.sources.length)],
+                    description: "Teste..."
+                })
+            }
+        }
     }
 </script>
 
