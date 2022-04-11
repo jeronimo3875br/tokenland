@@ -1,5 +1,5 @@
 <template>
-    <div class="smooth">Test</div>
+    <div class="smooth"></div>
 </template>
 
 <style scoped>
